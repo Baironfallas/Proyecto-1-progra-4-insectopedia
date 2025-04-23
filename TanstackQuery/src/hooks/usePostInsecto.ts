@@ -1,20 +1,18 @@
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { postInsecto } from "../services/svInsectoPost";
-import {  useMutation } from "@tanstack/react-query";
 
-export const usePostInsecto= () =>{
-    
+export const usePostInsecto = () => {
+  const queryClient = useQueryClient();
 
-    const{mutate, data:insecto, isPending, error, isSuccess}= useMutation({
-        mutationKey:['insectosPost'],
-        mutationFn: postInsecto,
-        
-    });
+  const { mutate } = useMutation({
+    mutationKey: ['insectos'],
+    mutationFn: postInsecto,
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['insectos'] });
+    },
+  });
 
-    return{
-            insecto: insecto ?? null,
-            isPending,
-            error,
-            isSuccess,
-            postInsecto: mutate,
-        }
-}
+  return {
+    crearInsecto: mutate,
+  };
+};
