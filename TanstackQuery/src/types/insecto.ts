@@ -15,3 +15,4 @@ export const initialInsecto = {
     tipo: "",
     img: ""
 };
+export type Createinsecto = Omit<insecto, "id">;

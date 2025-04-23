@@ -128,3 +128,63 @@
   vertical-align: middle;
   display: inline-block;
 }
+
+
+.btn-create {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #0f5c4c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-create:hover {
+  background-color: #0d4e42;
+}
+
+
+.form-create {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 400px;
+  margin: 1.5rem auto;
+}
+
+.form-create input {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.form-create button {
+  align-self: flex-end;
+}
+
+
+.main-header {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.form-container {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.status-message {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #333;
+  margin-top: 2rem;
+}
