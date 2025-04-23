@@ -1,4 +1,5 @@
 export type  insecto = {
+    id: string,
     nombre: string
     curiosidad: string,
     nombreCientifico: string
@@ -7,12 +8,10 @@ export type  insecto = {
 }
 
 export const initialInsecto = {
+    id: "",
     nombre: "",
     curiosidad: "",
     nombreCientifico: "",
     tipo: "",
     img: ""
 };
-
-
-//arreglar la api porque falta el campo de nombre cientifico
