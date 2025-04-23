@@ -109,7 +109,7 @@
 }
 
 .icon-btn.delete {
-  color: #000000; /* color oscuro del ícono */
+  color: #333; /* color oscuro del ícono */
 }
 
 .card-title-actions {
@@ -121,4 +121,10 @@
 .card-actions {
   display: flex;
   gap: 0.5rem;
+  margin-top: 0.5rem ;
+}
+.btn-icon {
+  margin-right: 0.5rem;
+  vertical-align: middle;
+  display: inline-block;
 }

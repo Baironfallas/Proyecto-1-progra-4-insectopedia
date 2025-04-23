@@ -16,12 +16,9 @@ const ButtonDelete = ({ id, nombre }: Props) => {
   };
 
   return (
-    <button
-      className="icon-btn delete"
-      onClick={handleEliminar}
-      title="Eliminar"
-    >
-      <MdDelete size={20} />
+    <button className="btn-delete" onClick={handleEliminar}>
+      <MdDelete className="btn-icon" />
+      Eliminar
     </button>
   );
 };
