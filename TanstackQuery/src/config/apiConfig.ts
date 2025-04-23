@@ -1,2 +1,2 @@
 
-export const BASE_URL = "https://68071aa1e81df7060eb8d6da.mockapi.io/";
+export const BASE_URL = "https://6808518d942707d722dddc6d.mockapi.io/";
