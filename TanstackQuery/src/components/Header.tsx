@@ -3,6 +3,7 @@ const Header = () => {
     <div>
       <h1 className="header-container">Insectopedia</h1>
     </div>
+    
   );
 };
 
