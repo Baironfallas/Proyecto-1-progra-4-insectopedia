@@ -8,7 +8,6 @@ export type  insecto = {
 }
 
 export const initialInsecto = {
-
     id: "",
     nombre: "",
     curiosidad: "",
