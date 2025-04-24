@@ -24,4 +24,14 @@ export const updateInsecto = async (insecto: insecto) => {
   }
 
   return response.json();
+
+export const deleteInsecto = async (id: string) => {
+  const response = await fetch(`${BASE_URL}Insectos/${id}`, {
+    method: "DELETE",
+  });
+  if (!response.ok) {
+    throw new Error("Error al eliminar el insecto");
+  }
+  return true;
+
 };
