@@ -1,4 +1,5 @@
 export type  insecto = {
+    //id: string
     nombre: string
     curiosidad: string,
     nombreCientifico: string
@@ -7,6 +8,7 @@ export type  insecto = {
 }
 
 export const initialInsecto = {
+   // id:0,
     nombre: "",
     curiosidad: "",
     nombreCientifico: "",
