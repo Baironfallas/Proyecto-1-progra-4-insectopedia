@@ -6,7 +6,7 @@ import CardInsectos from "./CardInsectos";
 import ButtonCreateInsecto from "./ButtonCreateInsecto";
 import FormCreateInsecto from "./FormCreateInsecto";
 
-const Main = () => {
+const Home = () => {
   const { data, isPending, error } = useInsectos();
   const { crearInsecto } = usePostInsecto();
   const [mostrarFormulario, setMostrarFormulario] = useState(false);
@@ -48,4 +48,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default Home;
