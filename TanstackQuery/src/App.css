@@ -253,3 +253,24 @@
   background-color: #d6d6d6;
 }
 
+.footer {
+  background-color: #0f5c4c;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  border-top: 4px solid #2f826f;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer-rights {
+  font-size: 0.9rem;
+  margin: 0.2rem 0;
+}
+
+.footer-quote {
+  font-size: 1rem;
+  font-style: italic;
+  color: #e0f7f1;
+  margin: 0.2rem 0;
+}
