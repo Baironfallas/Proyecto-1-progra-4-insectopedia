@@ -1,11 +1,19 @@
 import { useState } from "react";
 import { Createinsecto } from "../types/insecto";
+import {
+  FaUser,
+  FaLightbulb,
+  FaLeaf,
+  FaMapMarkerAlt,
+  FaImage,
+} from "react-icons/fa";
 
 type Props = {
   onSubmit: (nuevoInsecto: Createinsecto) => void;
+  onCancel: () => void;
 };
 
-const FormCreateInsecto = ({ onSubmit }: Props) => {
+const FormCreateInsecto = ({ onSubmit, onCancel }: Props) => {
   const [formData, setFormData] = useState<Createinsecto>({
     nombre: "",
     curiosidad: "",
@@ -36,49 +44,74 @@ const FormCreateInsecto = ({ onSubmit }: Props) => {
 
   return (
     <form className="form-create" onSubmit={handleSubmit}>
-      <input
-        type="text"
-        name="nombre"
-        value={formData.nombre}
-        onChange={handleChange}
-        placeholder="Nombre"
-        required
-      />
-      <input
-        type="text"
-        name="curiosidad"
-        value={formData.curiosidad}
-        onChange={handleChange}
-        placeholder="Curiosidad"
-        required
-      />
-      <input
-        type="text"
-        name="nombreCientifico"
-        value={formData.nombreCientifico}
-        onChange={handleChange}
-        placeholder="Nombre científico"
-        required
-      />
-      <input
-        type="text"
-        name="tipo"
-        value={formData.tipo}
-        onChange={handleChange}
-        placeholder="Tipo"
-        required
-      />
-      <input
-        type="url"
-        name="img"
-        value={formData.img}
-        onChange={handleChange}
-        placeholder="URL de imagen"
-        required
-      />
-      <button type="submit" className="btn-create">
-        Guardar
-      </button>
+      <div className="input-icon">
+        <FaUser className="icon" />
+        <input
+          type="text"
+          name="nombre"
+          value={formData.nombre}
+          onChange={handleChange}
+          placeholder="Nombre"
+          required
+        />
+      </div>
+
+      <div className="input-icon">
+        <FaLightbulb className="icon" />
+        <input
+          type="text"
+          name="curiosidad"
+          value={formData.curiosidad}
+          onChange={handleChange}
+          placeholder="Curiosidad"
+          required
+        />
+      </div>
+
+      <div className="input-icon">
+        <FaLeaf className="icon" />
+        <input
+          type="text"
+          name="nombreCientifico"
+          value={formData.nombreCientifico}
+          onChange={handleChange}
+          placeholder="Nombre científico"
+          required
+        />
+      </div>
+
+      <div className="input-icon">
+        <FaMapMarkerAlt className="icon" />
+        <input
+          type="text"
+          name="tipo"
+          value={formData.tipo}
+          onChange={handleChange}
+          placeholder="Tipo"
+          required
+        />
+      </div>
+
+      <div className="input-icon">
+        <FaImage className="icon" />
+        <input
+          type="url"
+          name="img"
+          value={formData.img}
+          onChange={handleChange}
+          placeholder="URL de imagen"
+          required
+        />
+      </div>
+
+      <div className="form-buttons">
+        <button type="submit" className="btn-create">
+          Guardar
+        </button>
+        <button type="button" className="btn-cancel" onClick={onCancel}>
+          Cancelar
+        </button>
+      </div>
     </form>
   );
 };

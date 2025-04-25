@@ -32,7 +32,10 @@ const Main = () => {
 
       {mostrarFormulario && (
         <div className="form-container">
-          <FormCreateInsecto onSubmit={handleCrearInsecto} />
+          <FormCreateInsecto
+            onSubmit={handleCrearInsecto}
+            onCancel={() => setMostrarFormulario(false)}
+          />
         </div>
       )}
 
