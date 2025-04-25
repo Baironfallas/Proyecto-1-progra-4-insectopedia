@@ -7,7 +7,7 @@ type Props = {
 const ButtonCreateInsecto = ({ onClick }: Props) => {
   return (
     <button className="btn-create" onClick={onClick}>
-      <MdAdd className="btn-icon" />
+      <MdAdd className="btn-icon" id="button-create" />
       Crear nuevo insecto
     </button>
   );
