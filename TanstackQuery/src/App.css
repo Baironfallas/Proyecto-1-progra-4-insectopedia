@@ -5,6 +5,8 @@
 }
 body {
 background-color: #eaf4ef;
+
+
 }
 
 .header-container {
@@ -371,4 +373,17 @@ background-color: #eaf4ef;
   color: #e0f7f1;
   margin: 0.2rem 0;
 
+}
+
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.layout-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
