@@ -7,6 +7,7 @@ import {
   FaMapMarkerAlt,
   FaImage,
 } from "react-icons/fa";
+import "../style/FormCreateInsecto.css";
 
 type Props = {
   onSubmit: (nuevoInsecto: Createinsecto) => void;
@@ -57,18 +58,6 @@ const FormCreateInsecto = ({ onSubmit, onCancel }: Props) => {
       </div>
 
       <div className="input-icon">
-        <FaLightbulb className="icon" />
-        <input
-          type="text"
-          name="curiosidad"
-          value={formData.curiosidad}
-          onChange={handleChange}
-          placeholder="Curiosidad"
-          required
-        />
-      </div>
-
-      <div className="input-icon">
         <FaLeaf className="icon" />
         <input
           type="text"
@@ -100,6 +89,18 @@ const FormCreateInsecto = ({ onSubmit, onCancel }: Props) => {
           value={formData.img}
           onChange={handleChange}
           placeholder="URL de imagen"
+          required
+        />
+      </div>
+
+      <div className="input-icon">
+        <FaLightbulb className="icon" />
+        <input
+          type="text"
+          name="curiosidad"
+          value={formData.curiosidad}
+          onChange={handleChange}
+          placeholder="Curiosidad"
           required
         />
       </div>

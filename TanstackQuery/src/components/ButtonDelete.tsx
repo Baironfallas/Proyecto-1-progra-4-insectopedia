@@ -1,5 +1,7 @@
 import { MdDelete } from "react-icons/md";
 import { useDeleteInsecto } from "../hooks/useDeleteInsecto";
+import "../style/iconos.css";
+import "../style/ButtonDelete.css";
 
 type Props = {
   id: string;

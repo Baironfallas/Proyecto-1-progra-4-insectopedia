@@ -1,5 +1,5 @@
 import { MdAdd } from "react-icons/md";
-
+import "../style/ButtonCreateInsecto.css";
 type Props = {
   onClick: () => void;
 };
