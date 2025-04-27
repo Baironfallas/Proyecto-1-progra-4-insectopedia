@@ -23,7 +23,9 @@ const FormCreateInsecto = ({ onSubmit, onCancel }: Props) => {
     img: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -93,15 +95,17 @@ const FormCreateInsecto = ({ onSubmit, onCancel }: Props) => {
         />
       </div>
 
-      <div className="input-icon">
+      {/* Textarea de Curiosidad */}
+      <div className="input-icon textarea-icon">
         <FaLightbulb className="icon" />
-        <input
-          type="text"
+        <textarea
           name="curiosidad"
           value={formData.curiosidad}
           onChange={handleChange}
           placeholder="Curiosidad"
           required
+          rows={3}
+          className="input-textarea"
         />
       </div>
 

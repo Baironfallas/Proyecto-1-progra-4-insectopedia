@@ -44,11 +44,12 @@
 
 .card-subtitle {
     font-style: italic;
+    font-weight: bold;
 }
 
 .card-actions {
     display: flex;
-    gap: 0.5rem;
+    gap: 0.7rem;
     margin-top: 0.5rem ;
   }
   

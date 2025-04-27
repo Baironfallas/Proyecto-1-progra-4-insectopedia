@@ -43,8 +43,8 @@ const Home = () => {
       )}
 
       <div className="main-container">
-        {data.map((item: insecto, index: number) => (
-          <CardInsectos key={index} data={item} />
+        {data.map((item: insecto) => (
+          <CardInsectos key={item.id} data={item} />
         ))}
       </div>
     </>

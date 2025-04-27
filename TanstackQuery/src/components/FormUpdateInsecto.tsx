@@ -18,7 +18,9 @@ type Props = {
 const FormEditInsecto = ({ insectoActual, onGuardar, onCancelar }: Props) => {
   const [formData, setFormData] = useState<insecto>(insectoActual);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -70,18 +72,6 @@ const FormEditInsecto = ({ insectoActual, onGuardar, onCancelar }: Props) => {
       </div>
 
       <div className="input-icon">
-        <FaLightbulb className="icon" />
-        <input
-          type="text"
-          name="curiosidad"
-          value={formData.curiosidad}
-          onChange={handleChange}
-          placeholder="Curiosidad"
-          required
-        />
-      </div>
-
-      <div className="input-icon">
         <FaImage className="icon" />
         <input
           type="url"
@@ -90,6 +80,19 @@ const FormEditInsecto = ({ insectoActual, onGuardar, onCancelar }: Props) => {
           onChange={handleChange}
           placeholder="URL de imagen"
           required
+        />
+      </div>
+
+      <div className="input-icon textarea-icon">
+        <FaLightbulb className="icon" />
+        <textarea
+          name="curiosidad"
+          value={formData.curiosidad}
+          onChange={handleChange}
+          placeholder="Curiosidad"
+          required
+          rows={3}
+          className="input-textarea"
         />
       </div>
 
