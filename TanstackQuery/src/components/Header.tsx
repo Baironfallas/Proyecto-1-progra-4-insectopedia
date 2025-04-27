@@ -1,9 +1,10 @@
+import "../style/Header.css";
+
 const Header = () => {
   return (
     <div>
       <h1 className="header-container">Insectopedia</h1>
     </div>
-    
   );
 };
 

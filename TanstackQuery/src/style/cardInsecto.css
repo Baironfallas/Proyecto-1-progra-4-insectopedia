@@ -1,0 +1,61 @@
+.card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 16rem;
+  height: 23rem; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  font-family: sans-serif;
+  background-color: white;
+  margin: 0.2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+
+  .card-img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+  }
+  
+  .card-content {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between; 
+  }
+  
+  .card-title {
+    margin: 0 0 0.5rem 0;
+  }
+  
+  .card-type,
+  .card-curiosity {
+    margin: 0.25rem 0;
+  }
+  
+  .card-buttons {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+.card-subtitle {
+    font-style: italic;
+}
+
+.card-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem ;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+  }
+  
+  

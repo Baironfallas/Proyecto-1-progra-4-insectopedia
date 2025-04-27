@@ -5,6 +5,7 @@ import { Createinsecto, insecto } from "../types/insecto";
 import CardInsectos from "./CardInsectos";
 import ButtonCreateInsecto from "./ButtonCreateInsecto";
 import FormCreateInsecto from "./FormCreateInsecto";
+import "../style/Home.css";
 
 const Home = () => {
   const { data, isPending, error } = useInsectos();
@@ -31,11 +32,13 @@ const Home = () => {
       </div>
 
       {mostrarFormulario && (
-        <div className="form-container">
-          <FormCreateInsecto
-            onSubmit={handleCrearInsecto}
-            onCancel={() => setMostrarFormulario(false)}
-          />
+        <div className="modal-overlay">
+          <div className="modal-content">
+            <FormCreateInsecto
+              onSubmit={handleCrearInsecto}
+              onCancel={() => setMostrarFormulario(false)}
+            />
+          </div>
         </div>
       )}
 

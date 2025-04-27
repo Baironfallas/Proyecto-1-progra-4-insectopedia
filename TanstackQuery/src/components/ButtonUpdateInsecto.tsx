@@ -1,5 +1,7 @@
 import { FaEdit } from "react-icons/fa";
 import { insecto } from "../types/insecto";
+import "../style/iconos.css";
+import "../style/ButtonUpdate.css";
 
 type Props = {
   data: insecto;
@@ -9,7 +11,7 @@ type Props = {
 const ButtonUpdateInsecto = ({ data, onClick }: Props) => {
   return (
     <button
-      className="btn btn-edit"
+      className="btn-edit"
       onClick={onClick}
       title={`Editar ${data.nombre}`}
     >
