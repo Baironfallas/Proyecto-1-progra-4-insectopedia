@@ -1,0 +1,45 @@
+.status-message {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #333;
+    margin-top: 2rem;
+  }
+  
+  .main-header {
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  .main-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    padding-top: 2rem;
+    align-items: flex-start; 
+  }
+
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(1px); 
+  }
+  
+  .modal-content {
+    background: #ffffff;
+    padding: 1rem 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    max-width: 30rem;
+    width: 90%;
+    animation: fadeInModal 0.4s ease-out;
+  }

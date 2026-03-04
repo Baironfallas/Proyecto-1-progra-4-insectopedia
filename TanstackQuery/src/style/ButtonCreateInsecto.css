@@ -1,0 +1,21 @@
+.btn-create {
+    display: inline-flex;
+    align-items: center;
+    background-color: #0f5c4c;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  
+  .btn-create:hover {
+    background-color: #0d4e42;
+  }
+
+#button-create{
+    color: #6fe3c5;
+}
+  
