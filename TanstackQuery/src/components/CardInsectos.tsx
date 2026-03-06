@@ -30,15 +30,17 @@ const CardInsectos = ({ data }: Props) => {
   return (
     <>
       <div className="card">
-        <img src={data.img} alt={data.nombre} className="card-img" />
+        <div className="card-img-wrapper">
+          <img src={data.img} alt={data.nombre} className="card-img" />
+          <span className="card-badge">{data.tipo}</span>
+        </div>
         <div className="card-content">
-          <h3 className="card-title">{data.nombre}</h3>
-          <p className="card-subtitle">{data.nombreCientifico}</p>
-          <p className="card-type">
-            <strong>Tipo:</strong> {data.tipo}
-          </p>
+          <div className="card-header">
+            <h3 className="card-title">{data.nombre}</h3>
+            <p className="card-subtitle">{data.nombreCientifico}</p>
+          </div>
           <p className="card-curiosity">
-            <strong>Curiosidad:</strong> {data.curiosidad}
+            {data.curiosidad}
           </p>
           <div className="card-actions">
             <ButtonUpdateInsecto data={data} onClick={handleEdit} />

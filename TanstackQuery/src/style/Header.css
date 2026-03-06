@@ -1,9 +1,107 @@
 
-.header-container {
-    background-color: #0f5c4c;
-    color: white;
-    padding: 1.5rem;
-    text-align: center;
-    font-size: 2rem;
-    font-weight: bold;
+.header {
+  background: linear-gradient(135deg, #0a3d32 0%, #0f5c4c 40%, #1a7a66 100%);
+  color: white;
+  padding: 1.8rem 1.5rem 1.2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(15, 92, 76, 0.4);
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.04) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.header-icon {
+  font-size: 2.6rem;
+  color: #7ee8c7;
+  filter: drop-shadow(0 0 6px rgba(126, 232, 199, 0.3));
+  animation: float 3s ease-in-out infinite;
+}
+
+.header-icon--flipped {
+  transform: scaleX(-1);
+  animation-delay: 1.5s;
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header-title {
+  font-size: 2.4rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  margin: 0;
+}
+
+.header-subtitle {
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: #b8efe0;
+  letter-spacing: 1px;
+  margin-top: 0.3rem;
+}
+
+.header-decoration {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #7ee8c7, #2f826f, #7ee8c7);
+  background-size: 200% 100%;
+  animation: shimmer 4s linear infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.header-icon--flipped {
+  animation-name: float-flipped;
+}
+
+@keyframes float-flipped {
+  0%, 100% { transform: scaleX(-1) translateY(0); }
+  50% { transform: scaleX(-1) translateY(-5px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@media (max-width: 500px) {
+  .header-title {
+    font-size: 1.6rem;
+  }
+  .header-icon {
+    font-size: 1.8rem;
+  }
+  .header-subtitle {
+    font-size: 0.8rem;
+  }
 }

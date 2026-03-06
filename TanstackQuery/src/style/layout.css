@@ -1,13 +1,100 @@
+/* layout.css */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&family=DM+Sans:wght@300;400;500&display=swap');
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-forest:     #0f5c4c;
+  --color-forest-dark:#0a3d2e;
+  --color-mint:       #4ecba0;
+  --color-mint-light: #a8e6cf;
+  --color-bg:         #eef7f2;
+  --color-text:       #1a2e26;
+  --transition-base:  0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Layout shell ── */
 .layout {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+  isolation: isolate;
+}
+
+/* Textura de fondo fija que abarca toda la página */
+.layout::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(ellipse at 10% 15%, rgba(78, 203, 160, 0.10) 0%, transparent 50%),
+    radial-gradient(ellipse at 90% 80%, rgba(15, 92, 76, 0.09) 0%, transparent 50%),
+    radial-gradient(circle, rgba(15, 92, 76, 0.055) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 26px 26px;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* ── Main content area ── */
+.layout-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  /* Entrada suave del contenido de página */
+  animation: pageReveal 0.55s ease both;
+}
+
+@keyframes pageReveal {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
   }
-  
-  .layout-main {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
+}
+
+/* ── Scrollbar personalizada ── */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--color-mint), var(--color-forest));
+  border-radius: 99px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-forest);
+}
+
+/* ── Selección de texto ── */
+::selection {
+  background: rgba(78, 203, 160, 0.30);
+  color: var(--color-forest-dark);
+}

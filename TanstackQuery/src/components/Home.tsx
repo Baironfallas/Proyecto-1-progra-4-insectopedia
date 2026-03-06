@@ -26,7 +26,7 @@ const Home = () => {
     return <p className="status-message">Error: {(error as Error).message}</p>;
 
   return (
-    <>
+    <div className="home-wrapper">
       <div className="main-header">
         <ButtonCreateInsecto onClick={toggleFormulario} />
       </div>
@@ -47,7 +47,7 @@ const Home = () => {
           <CardInsectos key={item.id} data={item} />
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

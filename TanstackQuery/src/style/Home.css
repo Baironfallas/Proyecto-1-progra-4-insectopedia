@@ -1,45 +1,163 @@
+/* Home.css */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* ── Fondo general con textura orgánica ── */
+.home-wrapper {
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 15% 20%, rgba(78, 160, 120, 0.12) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 75%, rgba(34, 110, 80, 0.10) 0%, transparent 55%),
+    #eef7f2;
+  position: relative;
+}
+
+/* Patrón de puntos muy sutil */
+.home-wrapper::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(15, 92, 76, 0.07) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Header ── */
+.main-header {
+  text-align: center;
+  padding: 3rem 1rem 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.main-header::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #0f5c4c, transparent);
+  margin: 1.5rem auto 0;
+  border-radius: 2px;
+}
+
+/* ── Grid de cards ── */
+.main-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 1.8rem;
+  padding: 2rem 3rem 4rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Entrada escalonada de cards */
+.main-container > * {
+  animation: cardReveal 0.5s ease both;
+}
+
+.main-container > *:nth-child(1) { animation-delay: 0.05s; }
+.main-container > *:nth-child(2) { animation-delay: 0.12s; }
+.main-container > *:nth-child(3) { animation-delay: 0.19s; }
+.main-container > *:nth-child(4) { animation-delay: 0.26s; }
+.main-container > *:nth-child(5) { animation-delay: 0.33s; }
+.main-container > *:nth-child(6) { animation-delay: 0.40s; }
+.main-container > *:nth-child(n+7) { animation-delay: 0.47s; }
+
+@keyframes cardReveal {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ── Estado de carga / error ── */
 .status-message {
-    text-align: center;
-    font-weight: bold;
-    font-size: 1.2rem;
-    color: #333;
-    margin-top: 2rem;
-  }
-  
-  .main-header {
-    text-align: center;
-    margin-top: 2rem;
-  }
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: #0f5c4c;
+  margin-top: 5rem;
+  letter-spacing: 0.05em;
+  opacity: 0;
+  animation: fadeIn 0.6s ease 0.2s forwards;
+}
 
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* ── Modal overlay ── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(10, 40, 30, 0.65) 0%, rgba(5, 20, 15, 0.80) 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(6px) saturate(0.8);
+  animation: overlayIn 0.3s ease;
+}
+
+@keyframes overlayIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── Modal content ── */
+.modal-content {
+  background: #ffffff;
+  padding: 2rem 2.2rem 1.8rem;
+  border-radius: 20px;
+  box-shadow:
+    0 0 0 1px rgba(15, 92, 76, 0.12),
+    0 20px 60px rgba(10, 40, 30, 0.30),
+    0 4px 16px rgba(10, 40, 30, 0.12);
+  max-width: 30rem;
+  width: 90%;
+  position: relative;
+  animation: modalSlideUp 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Acento verde superior del modal */
+.modal-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #0f5c4c, #4ecba0, #0f5c4c, transparent);
+  border-radius: 0 0 3px 3px;
+}
+
+@keyframes modalSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
   .main-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
-    padding-top: 2rem;
-    align-items: flex-start; 
+    grid-template-columns: 1fr;
+    padding: 1.5rem 1.2rem 3rem;
+    gap: 1.2rem;
   }
 
-  .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5); 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    backdrop-filter: blur(1px); 
-  }
-  
   .modal-content {
-    background: #ffffff;
-    padding: 1rem 1.5rem;
-    border-radius: 16px;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
-    max-width: 30rem;
-    width: 90%;
-    animation: fadeInModal 0.4s ease-out;
+    padding: 1.5rem 1.2rem;
   }
+}
