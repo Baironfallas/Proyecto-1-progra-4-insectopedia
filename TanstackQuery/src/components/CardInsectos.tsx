@@ -39,9 +39,7 @@ const CardInsectos = ({ data }: Props) => {
             <h3 className="card-title">{data.nombre}</h3>
             <p className="card-subtitle">{data.nombreCientifico}</p>
           </div>
-          <p className="card-curiosity">
-            {data.curiosidad}
-          </p>
+          <p className="card-curiosity">{data.curiosidad}</p>
           <div className="card-actions">
             <ButtonUpdateInsecto data={data} onClick={handleEdit} />
             <ButtonDelete id={data.id} nombre={data.nombre} />

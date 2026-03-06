@@ -8,7 +8,9 @@ const Header = () => {
         <GiSpottedBug className="header-icon" />
         <div className="header-text">
           <h1 className="header-title">Insectopedia</h1>
-          <p className="header-subtitle">Explora el fascinante mundo de los insectos</p>
+          <p className="header-subtitle">
+            Explora el fascinante mundo de los insectos
+          </p>
         </div>
         <GiSpottedBug className="header-icon header-icon--flipped" />
       </div>
